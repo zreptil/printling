@@ -1,0 +1,79 @@
+@import 'package:angular_components/css/material/material';
+@import 'cards.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-flow: wrap;
+  flex: 1;
+  justify-content: center;
+  height: 100%;
+  >div {
+    background-color: $mat-white;
+    color: $mat-black;
+    font-size: 1em;
+    display: flex;
+    margin: 0.5em;
+    width: 400px;
+    min-height: calc(100% / 4);
+    max-height: calc(100% / 2);
+    word-wrap: break-word;
+    material-input
+    {
+      width: 100%;
+    }
+    >div.title {
+      font-size: 1em;
+      margin: 0;
+      padding: 0.4em;
+      text-align: center;
+    }
+    >div.title-edit {
+      font-size: 1em;
+      opacity: 90;
+      margin: 0;
+      padding: 0.4em;
+    }
+    >div.description {
+      display: flex;
+      flex: 1;
+      font-weight: normal;
+      padding: 0.3em;
+      margin: 0;
+      font-size: 1em;
+      overflow-y: auto;
+    }
+    >div.description-edit {
+      display: flex;
+      flex: 1;
+      font-weight: normal;
+      padding: 0.3em;
+      margin: 0;
+      font-size: 1em;
+      overflow-y: auto;
+    }
+    >div.controls, >div.controls-edit {
+      display: flex;
+      margin: 0;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: 0.5em 0;
+    }
+    >div:not(:hover) {
+      box-shadow: none;
+      opacity: 0.9;
+    }
+  }
+}
+material-fab#btnAdd
+{
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 1em;
+  background-color: $mat-red;
+  color: $mat-white;
+}

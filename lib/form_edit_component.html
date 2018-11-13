@@ -1,0 +1,18 @@
+<div class="editframe" [ngClass]="data.css">
+  <div id="editor"></div>
+  <div class="controls">
+    <material-dropdown-select [buttonText]="editor != null?editor.getTheme():'Default'">
+      <material-select-item *ngFor="let item of listThemes"
+                            (trigger)="setTheme(item)"
+                            [selected]="editor != null && editor.getTheme().toLowerCase()==item.toLowerCase()">
+        <div>
+          <div class="itemtitle">{{item}}</div>
+        </div>
+      </material-select-item>
+    </material-dropdown-select>
+    <material-button icon (trigger)="showPDF()">
+      <material-icon icon="send"></material-icon>
+    </material-button>
+  </div>
+</div>
+<iframe name="pdf" id="pdf"></iframe>

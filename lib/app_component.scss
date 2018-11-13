@@ -1,0 +1,103 @@
+@import 'package:angular_components/css/material/material';
+@import 'package:angular_components/material_select/mixins';
+@import 'package:angular_components/material_list/mixins';
+@import 'package:angular_components/material_expansionpanel/mixins';
+@import 'package:angular_components/app_layout/mixins';
+@import 'package:angular_components/material_button/mixins';
+@import 'cards.scss';
+
+:host
+{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+header.material-header
+{
+  background-color: $mat-red-500;
+}
+#app-content
+{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+material-content
+{
+  display: flex!important;
+  justify-content: center;
+}
+material-drawer
+{
+  flex-direction: row!important;
+  > div
+  {
+    justify-content: space-between;
+    align-self: flex-end;
+  }
+}
+div[group]
+{
+  padding: 1em;
+}
+.controls
+{
+  display: flex;
+  align-items: center;
+}
+.title
+{
+  white-space: normal;
+}
+.help
+{
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  > div
+  {
+    > div
+    {
+      font-size: 110%;
+      font-weight: bold;
+    }
+    > p
+    {
+      justify-content: space-evenly;
+    }
+  }
+}
+#message
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: $mat-black;
+  color: white;
+  width: 100%;
+  padding: 0.5em;
+  z-index: 10001;
+}
+.menufabs
+{
+  display: flex;
+  flex-direction: row;
+}
+#postForm
+{
+  display: none;
+}
+#overlay
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: $mat-gray-900;
+  opacity: 0.25;
+  z-index: 10000;
+}

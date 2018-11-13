@@ -1,0 +1,55 @@
+<loginpanel [style.display]="isLoggedIn?'none':'flex'" (loginresult)="loginResult"></loginpanel>
+<div id="app-content"  [ngClass]="appTheme" [style.display]="isLoggedIn?'flex':'none'">
+  <header class="material-header shadow">
+    <div class="material-header-row">
+      <material-button icon id="btnMenu"
+                       class="material-drawer-button" (trigger)="currentPage=='edit'?cancelEdit():drawer.toggle()">
+        <material-icon icon="{{currentPage=='edit'?'arrow_back':'menu'}}"></material-icon>
+      </material-button>
+      <span class="material-header-title">{{title}}</span>
+      <div class="material-spacer"></div>
+      <div class="info">
+        <div class="controls">
+          <material-button icon class="material-drawer-button" (trigger)="toggleHelp()">
+            <material-icon icon="help"></material-icon>
+          </material-button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <material-content>
+    <div [style.display]="isLoggedIn&&currentPage=='list'?'':'none'">
+      <template #listContent></template>
+    </div>
+    <div [style.display]="isLoggedIn&&currentPage=='edit'?'':'none'">
+      <template #editContent></template>
+    </div>
+    <div class="help" [style.display]="currentPage=='help'?'':'none'">
+      <div>
+        <div>Willkommen zu Printling.</div>
+        <p>
+          Printling ist eine Webapp, mit der man PDF-Dokumente erzeugen kann. Die Definitionen für die Dokumente werden
+          auf dem Google Drive des Anwenders gespeichert. Zur Erzeugung des PDF wird
+          <a href="https://github.com/bpampuch/pdfmake" target="_blank">PDFMake</a> verwendet
+        </p>
+      </div>
+    </div>
+  </material-content>
+  <material-drawer scrollable persistent #drawer="drawer" [visible]="drawerVisible">
+    <div class="menufabs">
+      <material-button icon class="material-drawer-button" (trigger)="navigate('https://myaccount.google.com/permissions')">
+        <material-icon icon="perm_identity"></material-icon>
+      </material-button>
+    </div>
+  </material-drawer>
+</div>
+<div id="overlay" [style.display]="message.isEmpty()?'none':''"></div>
+<div id="message" *ngIf="!message.isEmpty()" (click)="message.ok == null ? display('') : null">
+  {{message.text}}
+  <material-button [style.display]="message.ok==null?'none':''" (trigger)="message.dismiss(message.ok)">Ja</material-button>
+  <material-button [style.display]="message.cancel==null?'none':''" (trigger)="message.dismiss(message.cancel)">Nein</material-button>
+</div>
+<form id="postForm" target="_blank" method="post" action="http://pdf.zreptil.de/index.php">
+  <input name="data" value="{{pdfData}}" />
+</form>
+<template #dlgContent></template>

@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+body
+{
+  background: #ffa0a0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto, Tahoma, Helvetica, Arial, sans-serif;
+}
+apppanel
+{
+  display: flex;
+  width: 100vw;
+  flex-flow: column;
+}
+apppanel .splash
+{
+  align-self: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-flow: row;
+  align-items: center;
+}
+apppanel .splash > div
+{
+  text-align: center;
+}
+apppanel .splash .head
+{
+  font-size: 3em;
+}
+apppanel .splash .subhead
+{
+  font-size: 1.5em;
+}
+apppanel .splash img
+{
+  margin: 1em;
+}
+

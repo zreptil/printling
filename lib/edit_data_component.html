@@ -1,0 +1,41 @@
+<div>
+  <span class="title">{{data.name}}</span>
+  <material-dropdown-select
+    *ngIf="data.comboData.key=='person'"
+    [buttonText]="data.selected!=null?data.selected.name:'Bitte auswählen'">
+    <material-select-item *ngFor="let item of data.comboData.PersonEntries"
+                          (trigger)="data.changeSelected(item)"
+                          [selected]="item==data.selected">
+      <div>
+        <div class="itemtitle">{{item.name}}</div>
+      </div>
+    </material-select-item>
+  </material-dropdown-select>
+  <material-dropdown-select
+    *ngIf="data.comboData.key=='addresses'"
+    [buttonText]="data.selected!=null?data.selected.name:'Bitte auswählen'">
+    <material-select-item *ngFor="let item of data.comboData.AddressEntries"
+                          (trigger)="data.changeSelected(item)"
+                          [selected]="item==data.selected">
+      <div>
+        <div class="itemtitle">{{item.streetAddress}}</div>
+      </div>
+    </material-select-item>
+  </material-dropdown-select>
+  <material-dropdown-select
+    *ngIf="data.comboData.key=='names'"
+    [buttonText]="data.selected!=null?data.selected.name:'Bitte auswählen'">
+    <material-select-item *ngFor="let item of data.comboData.NameEntries"
+                          (trigger)="data.changeSelected(item)"
+                          [selected]="item==data.selected">
+      <div>
+        <div class="itemtitle">{{item.displayName}}</div>
+      </div>
+    </material-select-item>
+  </material-dropdown-select>
+  <div *ngFor="let m of data.members.values">
+    {{m.key}}HURZ
+    <editData [data]="m"></editData>
+    OLEOLE
+  </div>
+</div>

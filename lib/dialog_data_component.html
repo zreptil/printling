@@ -1,0 +1,22 @@
+<modal [visible]="isVisible">
+  <material-dialog headered class="headered-dialog">
+    <div header>
+      <h1>{{currentForm.title}}</h1>
+      <p></p>
+    </div>
+    <p>
+    <div *ngFor="let d of data">
+      <editData [data]="d"></editData>
+    </div>
+    </p>
+    <div footer>
+      <material-button clear-size (trigger)="btnClick(false)">
+        Abbrechen
+      </material-button>
+      <material-button autoFocus clear-size (trigger)="btnClick(true)">
+        Weiter
+      </material-button>
+    </div>
+
+  </material-dialog>
+</modal>

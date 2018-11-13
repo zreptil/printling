@@ -1,0 +1,167 @@
+@import 'package:angular_components/css/material/material';
+
+
+.red,.read header
+{
+  background: $mat-red-400;
+  color: $mat-white;
+  >div.title,>div.title-edit,.material-header-title
+  {
+    background: $mat-red-500;
+    color: $mat-white;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-red-200;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-red-300;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-red-500;
+  }
+}
+.blue,.blue header
+{
+  background: $mat-blue-400;
+  >div.title,>div.title-edit
+  {
+    background: $mat-blue-500;
+    color: $mat-black;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-blue-200;
+    color: $mat-black;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-blue-300;
+    color: $mat-black;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-blue-500;
+  }
+}
+.green,.green header
+{
+  background: $mat-green-400;
+  >div.title,>div.title-edit
+  {
+    background: $mat-green-500;
+    color: $mat-black;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-green-200;
+    color: $mat-black;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-green-300;
+    color: $mat-black;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-green-500;
+  }
+}
+.yellow,.yellow header
+{
+  background: $mat-yellow-400;
+  >div.title,>div.title-edit {
+    background: $mat-yellow-500;
+    color: $mat-black;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-yellow-200;
+    color: $mat-black;
+  }
+  >div>material-input
+  {
+    color: $mat-black;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-yellow-300;
+    color: $mat-black;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-yellow-500;
+  }
+}
+.purple,.purple header
+{
+  background: $mat-purple-400;
+  >div.title,>div.title-edit
+  {
+    background: $mat-purple-500;
+    color: $mat-white;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-purple-200;
+    color: $mat-black;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-purple-300;
+    color: $mat-black;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-purple-500;
+  }
+}
+.black,.black header
+{
+  background: $mat-black;
+  >div.title,>div.title-edit
+  {
+    background: $mat-black;
+    color: $mat-white;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-gray-700;
+    color: $mat-white;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-gray-900;
+    color: $mat-white;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-gray-500;
+  }
+}
+.white,.white header
+{
+  background: $mat-white;
+  color: $mat-black;
+  >div.title,>div.title-edit
+  {
+    background: $mat-gray-300;
+    color: $mat-black;
+  }
+  >div.description,>div.description-edit,+#pdf
+  {
+    background: $mat-gray-100;
+    color: $mat-black;
+  }
+  >div.controls,>div.controls-edit
+  {
+    background: $mat-white;
+    color: $mat-black;
+  }
+  +#pdf
+  {
+    border-left-color: $mat-gray-500;
+  }
+}

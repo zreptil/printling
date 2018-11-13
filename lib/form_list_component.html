@@ -1,0 +1,48 @@
+<div *ngFor="let data of fileData" [ngClass]="data.css" [style.display]="hideEditOther(data)">
+  <div class="title-edit" [style.display]="data.showEdit(true)">
+    <material-input [(ngModel)]="data.title" [displayBottomPanel]="false"></material-input>
+  </div>
+  <div class="title" [style.display]="data.showEdit(false)">{{data.title}}</div>
+  <div class="description-edit" [style.display]="data.showEdit(true)">
+    <material-input [(ngModel)]="data.description" multiline></material-input>
+  </div>
+  <div class="description" [style.display]="data.showEdit(false)">
+    {{data.description}}
+  </div>
+  <div class="controls" [style.display]="data.showEdit(false)">
+    <material-button icon (trigger)="print(data)">
+      <material-icon icon="picture_as_pdf"></material-icon>
+    </material-button>
+    <div>
+      <material-button icon (trigger)="editMeta(data)">
+        <material-icon icon="settings"></material-icon>
+      </material-button>
+      <material-button icon (trigger)="editForm(data)">
+        <material-icon icon="edit"></material-icon>
+      </material-button>
+    </div>
+  </div>
+  <div class="controls-edit" [style.display]="data.showEdit(true)">
+    <div>
+      <material-button icon (trigger)="cancelMeta(data)">
+        <material-icon icon="close"></material-icon>
+      </material-button>
+    </div>
+    <div>
+      <material-button *ngFor="let color of listColors" icon class="{{color}}" (trigger)="setColor(data,color)">
+        <material-icon icon=""></material-icon>
+      </material-button>
+    </div>
+    <div>
+      <material-button icon (trigger)="deleteForm(data)" [style.display]="data.isNew()?'none':''">
+        <material-icon icon="delete"></material-icon>
+      </material-button>
+      <material-button icon (trigger)="saveMeta(data)">
+        <material-icon icon="save"></material-icon>
+      </material-button>
+    </div>
+  </div>
+</div>
+<material-fab id="btnAdd" raised (trigger)="addForm" [style.display]="showAdd?'':'none'">
+  <material-icon icon="add"></material-icon>
+</material-fab>
